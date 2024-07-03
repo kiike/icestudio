@@ -491,15 +491,10 @@ let
 
           node ${addIntegrityFieldsScript}
         ''}
-      	#echo "npm calls here"
-      	#find . | grep "grunt"
-        find . -name 'Gruntfile.js'
-        exit 1
-        ./node_modules/grunt/bin/grunt dist --platform=linux64
-        exit 1
-        # npm ${forceOfflineFlag} --nodedir=${nodeSources} ${npmFlags} ${lib.optionalString production "--production"} run buildLinux64
 
         runHook postRebuild
+        node ${addIntegrityFieldsScript}
+      npm ${forceOfflineFlag} --nodedir=${nodeSources} ${npmFlags} --ignore-scripts ${lib.optionalString production "--production"} rebuild
 
         if [ "''${dontNpmInstall-}" != "1" ]
         then
