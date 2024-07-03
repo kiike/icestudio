@@ -7,7 +7,7 @@
   src = lib.sources.sourceByRegex (lib.cleanSource ./.) [".*.html" "(src|style)(/.*)?" "package.*" "Gruntfile.js"];
 in
   stdenv.mkDerivation rec {
-    name = "sprays.tf";
+    name = "icestudio";
     version = "0.1.0";
 
     inherit src;
