@@ -5,7 +5,7 @@ angular.module('icestudio')
 
     //-- Package for creating deep copies very fast
     //-- More info: https://www.npmjs.com/package/fast-copy
-    return require('fast-copy');
+    return require('fast-copy')
   })
 
   .factory('sparkMD5', function() {
