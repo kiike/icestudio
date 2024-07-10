@@ -30,7 +30,7 @@ angular.module('icestudio')
     this.getPythonPipExecutable = function () {
 
       if (!_pythonExecutableCached) {
-        this.getPythonExecutable();
+        this.getPythonExecutable()
       }
       if (!_pythonPipExecutableCached) {
         _pythonPipExecutableCached = common.ENV_PIP;
