@@ -474,12 +474,14 @@ module.exports = function (grunt) {
     "nggettext_compile",  //-- Extract English texts to the template file
     "copy:dist",    //-- Copy the files to be included in the build package
     "json-minify",  //-- Minify JSON files
-    "nwjs",         //-- Build the executable package
+
+    //-- Build the executable package, unless the flag --dont-build-nwjs is passed
+    ... grunt.option('dont-build-nwjs') ? [] : ["nwjs"],
 
     //-- The clean:tmp task is also a common task, but it is
     //-- executed after the specific platform task
     //-- So it is added later
-  ];
+    ];
 
   //-- Specific tasks to be executed depending on the target architecture
   //-- They are executed after the COMMON tasks
